@@ -1,0 +1,5 @@
+﻿Набор тестов: original_tests.py
+  m1_condition_removed.py      SURVIVED
+  m2_length_boundary.py        SURVIVED
+  m3_return_none.py            SURVIVED
+Убито 0 из 3

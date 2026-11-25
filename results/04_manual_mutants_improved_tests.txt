@@ -1,0 +1,5 @@
+﻿Набор тестов: test_email_validator.py
+  m1_condition_removed.py      KILLED
+  m2_length_boundary.py        KILLED
+  m3_return_none.py            KILLED
+Убито 3 из 3

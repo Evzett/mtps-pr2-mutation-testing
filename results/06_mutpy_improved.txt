@@ -1,0 +1,61 @@
+﻿[*] Start mutation process:
+   - targets: src.email_validator
+   - tests: tests.test_email_validator
+[*] 12 tests passed:
+   - tests.test_email_validator [0.24100 s]
+[*] Start mutants generation and execution:
+   - [#   1] COI src.email_validator: 
+--------------------------------------------------------------------------------
+  1: def is_valid_email(email):
+- 2:     return ('@' in email and '.' in email)
++ 2:     return ('@' not in email and '.' in email)
+--------------------------------------------------------------------------------
+[0.09795 s] killed by tests/test_email_validator.py::test_valid_email
+   - [#   2] COI src.email_validator: 
+--------------------------------------------------------------------------------
+  1: def is_valid_email(email):
+- 2:     return ('@' in email and '.' in email)
++ 2:     return ('@' in email and '.' not in email)
+--------------------------------------------------------------------------------
+[0.06647 s] killed by tests/test_email_validator.py::test_valid_email
+   - [#   3] CRP src.email_validator: 
+--------------------------------------------------------------------------------
+  1: def is_valid_email(email):
+- 2:     return ('@' in email and '.' in email)
++ 2:     return ('mutpy' in email and '.' in email)
+--------------------------------------------------------------------------------
+[0.06609 s] killed by tests/test_email_validator.py::test_valid_email
+   - [#   4] CRP src.email_validator: 
+--------------------------------------------------------------------------------
+  1: def is_valid_email(email):
+- 2:     return ('@' in email and '.' in email)
++ 2:     return ('' in email and '.' in email)
+--------------------------------------------------------------------------------
+[0.07309 s] killed by tests/test_email_validator.py::test_email_without_at_sign_is_invalid[userexample.com]
+   - [#   5] CRP src.email_validator: 
+--------------------------------------------------------------------------------
+  1: def is_valid_email(email):
+- 2:     return ('@' in email and '.' in email)
++ 2:     return ('@' in email and 'mutpy' in email)
+--------------------------------------------------------------------------------
+[0.07568 s] killed by tests/test_email_validator.py::test_valid_email
+   - [#   6] CRP src.email_validator: 
+--------------------------------------------------------------------------------
+  1: def is_valid_email(email):
+- 2:     return ('@' in email and '.' in email)
++ 2:     return ('@' in email and '' in email)
+--------------------------------------------------------------------------------
+[0.08405 s] killed by tests/test_email_validator.py::test_email_without_dot_is_invalid[user@examplecom]
+   - [#   7] LCR src.email_validator: 
+--------------------------------------------------------------------------------
+  1: def is_valid_email(email):
+- 2:     return ('@' in email and '.' in email)
++ 2:     return ('@' in email or '.' in email)
+--------------------------------------------------------------------------------
+[0.08464 s] killed by tests/test_email_validator.py::test_email_without_at_sign_is_invalid[userexample.com]
+[*] Mutation score [0.83507 s]: 100.0%
+   - all: 7
+   - killed: 7 (100.0%)
+   - survived: 0 (0.0%)
+   - incompetent: 0 (0.0%)
+   - timeout: 0 (0.0%)
