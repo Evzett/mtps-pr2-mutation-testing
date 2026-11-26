@@ -3,3 +3,7 @@ __pycache__/
 .pytest_cache/
 .coverage
 htmlcov/
+
+# отчёты и скриншоты с личными данными не публикуются
+report/
+screenshots/
